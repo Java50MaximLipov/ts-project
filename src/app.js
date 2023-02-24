@@ -37,4 +37,25 @@ someComparator = (n1, n2) => n1 - n2;
 someComparator = f1;
 someComparator = f2;
 const person = { id: 123, name: "Vasya" };
+//  HW-29
+function shiftRound(str, shift) {
+    //  TODO
+    //  adds "shift" to ASCII codes of lower case letters
+    //  if the shifted code will be greater than ASCII code `z`
+    //  the code should be begun from ASCII code `a`
+    //  example:
+    //  source letter `a` will be `c` if `shift` = 2
+    //  source letter `z` will be `b` if `shift` = 2
+    //  
+    //  shiftRound("aabx!", 4) => ("eefb!")
+    return "";
+}
+function unShiftRound(str, shift) {
+    //  TODO
+    //  substructs "shift" from ASCII codes of lower case letters
+    //  example:
+    //  source letter `c` will be `a` if `shift` = 2
+    //  shiftRound("eefb!", 4) => ("aabx!")
+    return "";
+}
 //# sourceMappingURL=app.js.map

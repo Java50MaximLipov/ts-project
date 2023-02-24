@@ -43,3 +43,24 @@ type Person = {
 }
 const person: Person = { id: 123, name: "Vasya" };
 
+//  HW-29
+function shiftRound(str: string, shift: number): string {
+    //  TODO
+    //  adds "shift" to ASCII codes of lower case letters
+    //  if the shifted code will be greater than ASCII code `z`
+    //  the code should be begun from ASCII code `a`
+    //  example:
+    //  source letter `a` will be `c` if `shift` = 2
+    //  source letter `z` will be `b` if `shift` = 2
+    //  
+    //  shiftRound("aabx!", 4) => ("eefb!")
+    return "";
+}
+function unShiftRound(str: string, shift: number): string {
+    //  TODO
+    //  substructs "shift" from ASCII codes of lower case letters
+    //  example:
+    //  source letter `c` will be `a` if `shift` = 2
+    //  shiftRound("eefb!", 4) => ("aabx!")
+    return "";
+}
