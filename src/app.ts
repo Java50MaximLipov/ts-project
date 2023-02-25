@@ -9,7 +9,7 @@ function shiftRound(str: string, shift: number): string {
         let shiftCalculation: number = asciiCode + shift;
         if (asciiCode >= FIRST_CHAR && asciiCode <= LAST_CHAR) {
             if ((shiftCalculation) > LAST_CHAR) {
-                symbol = String.fromCharCode(shiftCalculation - (LAST_CHAR - FIRST_CHAR + 1));
+                symbol = String.fromCharCode((shiftCalculation - FIRST_CHAR) % 26 + FIRST_CHAR);
             } else {
                 symbol = String.fromCharCode(shiftCalculation);
             }
@@ -26,7 +26,7 @@ function unShiftRound(str: string, shift: number): string {
         let shiftCalculation: number = asciiCode - shift;
         if (asciiCode >= FIRST_CHAR && asciiCode <= LAST_CHAR) {
             if ((shiftCalculation) < FIRST_CHAR) {
-                symbol = String.fromCharCode(LAST_CHAR - FIRST_CHAR + 1 + shiftCalculation);
+                symbol = String.fromCharCode(LAST_CHAR - (LAST_CHAR - shiftCalculation) % 26);
             } else {
                 symbol = String.fromCharCode(shiftCalculation);
             }
@@ -37,12 +37,11 @@ function unShiftRound(str: string, shift: number): string {
 }
 
 
-
-// Test Case Example for shiftRound function
+// // Test Case Example for shiftRound function
 let input: string = "aabx!";
 let shift: number = 4;
 let output: string = shiftRound(input, shift);
-let expectedOutput = "eefb!";
+let expectedOutput: string = "eefb!";
 console.log(`Test Case Example for shiftRound function: ${input} , with shift of ${shift}, and expected output: ${expectedOutput}`);
 console.log(output === expectedOutput ? `>>> Passed` : `>>> Failed with output: ${output}`);
 console.log("");
@@ -53,6 +52,24 @@ shift = 4;
 output = unShiftRound(input, shift);
 expectedOutput = "aabx!";
 console.log(`Test Case Example for unShiftRound function: ${input} , with shift of ${shift}, and expected output: ${expectedOutput}`);
+console.log(output === expectedOutput ? `>>> Passed` : `>>> Failed with output: ${output}`);
+console.log("");
+
+// Test Case With Big Shift for shiftRound function
+input = "hello world!";
+shift = 1000;
+output = shiftRound(input, shift);
+expectedOutput = "tqxxa iadxp!";
+console.log(`Test Case With Big Shift for shiftRound function: ${input} , with shift of ${shift}, and expected output: ${expectedOutput}`);
+console.log(output === expectedOutput ? `>>> Passed` : `>>> Failed with output: ${output}`);
+console.log("");
+
+// Test Case With Big Shift for unShiftRound function
+input = "tqxxa iadxp!";
+shift = 1000;
+output = unShiftRound(input, shift);
+expectedOutput = "hello world!";
+console.log(`Test Case With Big Shift for unShiftRound function: ${input} , with shift of ${shift}, and expected output: ${expectedOutput}`);
 console.log(output === expectedOutput ? `>>> Passed` : `>>> Failed with output: ${output}`);
 console.log("");
 
