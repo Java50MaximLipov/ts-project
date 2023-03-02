@@ -1,9 +1,11 @@
-import { Container } from "./Container";
-import { displaySquarePerimeter } from "./displayProps";
-import { Rectangle } from "./Rectangle";
-import { Square } from "./Square";
+import { CipherLeftShift } from "./CipherLeftShift"
+import { CipherRightShift } from "./CipherRightShift"
+import { displayCipherDecipher } from "./displayCipherDecipher"
 
-const rectangle: Rectangle = new Rectangle(3, 4);
-const square: Square = new Square(10);
-const container: Container = new Container([rectangle, square]);
-displaySquarePerimeter(container);
+let cipherRightShift:  CipherRightShift = new CipherRightShift(2);
+let cipherLeftShift: CipherLeftShift = new CipherLeftShift(3);
+
+displayCipherDecipher(cipherRightShift, 'xyz42');
+displayCipherDecipher(cipherLeftShift, 'abc567@ 0');
+displayCipherDecipher(cipherRightShift, 'zZ!&4');
+
