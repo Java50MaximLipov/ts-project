@@ -1,11 +1,12 @@
-import { CipherLeftShift } from "./CipherLeftShift"
-import { CipherRightShift } from "./CipherRightShift"
-import { displayCipherDecipher } from "./displayCipherDecipher"
+import { CipherLeftShift } from "./CipherLeftShift";
+import { CipherRightShift } from "./CipherRightShift";
+import { displayCipherDecipher } from "./displayCipherDecipher";
 
-let cipherRightShift:  CipherRightShift = new CipherRightShift(2);
-let cipherLeftShift: CipherLeftShift = new CipherLeftShift(3);
-
-displayCipherDecipher(cipherRightShift, 'xyz42');
-displayCipherDecipher(cipherLeftShift, 'abc567@ 0');
-displayCipherDecipher(cipherRightShift, 'zZ!&4');
-
+//module for testing
+const shift: number = 10000000000;
+console.log("************************Cipher Right Shift");
+const crs: CipherRightShift = new CipherRightShift(shift);
+displayCipherDecipher(crs, "Hello World!!!");
+console.log("************************Cipher Left Shift")
+const cls: CipherLeftShift = new CipherLeftShift(shift);
+displayCipherDecipher(cls, "Hello World!!!");

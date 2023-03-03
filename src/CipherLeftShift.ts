@@ -1,7 +1,9 @@
-import { CipherImp } from "./CipherDecipher";
+import { CipherImpl } from "./CipherDecipher";
 
-export class CipherLeftShift extends CipherImp {
+export class CipherLeftShift extends CipherImpl {
+    //deciphering right shift ' ' + shift
+    //ciphering left shift '~' - shift
     constructor(shift: number) {
-        super(shift, CipherImp.prototype.mapperDecipher, CipherImp.prototype.mapperCipher);
+        super(shift, true);
     }
 }
